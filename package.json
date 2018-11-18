@@ -1,9 +1,12 @@
 {
   "name": "vim-driver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Sam Howie <samhowie@gmail.com>",
   "main": "./dist",
-  "files": ["LICENSE", "dist"],
+  "files": [
+    "LICENSE",
+    "dist"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@babel/node": "^7.0.0-beta.49",
@@ -13,31 +16,31 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-env": "^1.7.0",
-    "colors": "^1.3.0",
-    "documentation": "^8.0.0",
     "flow-bin": "^0.71.0",
     "jest": "^22.4.3",
     "jest-silent-reporter": "^0.0.5",
     "jsesc": "^2.5.1",
-    "node-pty": "^0.7.4",
-    "prettier": "1.12.1",
-    "prompt": "^1.0.0"
+    "prettier": "1.12.1"
   },
   "scripts": {
     "test": "LOG_LEVEL=error jest",
-    "build":
-      "babel src/ -d dist/ --ignore **/__tests__/*.js && cp src/*.vim dist/",
+    "build": "babel src/ -d dist/ --ignore **/__tests__/*.js && cp src/*.vim dist/",
     "prepublish": "yarn run build",
     "example": "babel-node examples/index.js",
     "example:0": "babel-node examples/hello_vim_driver/main.js",
     "example:1": "babel-node examples/ascii_art/main.js"
   },
   "dependencies": {
+    "colors": "^1.3.0",
     "shortid": "^2.2.8"
   },
   "jest": {
-    "reporters": ["jest-silent-reporter"],
-    "roots": ["<rootDir>/src/"],
+    "reporters": [
+      "jest-silent-reporter"
+    ],
+    "roots": [
+      "<rootDir>/src/"
+    ],
     "testURL": "http://localhost",
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.js$"
   }
